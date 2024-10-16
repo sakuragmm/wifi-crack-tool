@@ -430,7 +430,7 @@ class WifiCrackTool:
                 self.ssids:list[str] = []
                 self.profile_dict:dict[str,Profile] = {}
                 for i,data in enumerate(ap_list):#输出扫描到的WiFi名称
-                    ssid = data.ssid
+                    ssid = data.ssid.encode('raw_unicode_escape').decode('utf-8')
                     self.ssids.insert(i,ssid)
                     profile = Profile()
                     profile.ssid = data.ssid # * wifi名称
