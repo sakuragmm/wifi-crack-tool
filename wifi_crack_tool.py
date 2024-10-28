@@ -437,7 +437,7 @@ class WifiCrackTool:
                     profile.auth = data.auth # * 网卡的开放
                     profile.akm = data.akm # * wifi加密算法，一般是 WPA2PSK
                     profile.cipher = data.cipher # * 加密单元
-                    self.profile_dict[data.ssid] = profile
+                    self.profile_dict[ssid] = profile
                 self.win.reset_controls_state.send()
                 self.win.add_wifi_items.send(self.ssids)
                 if len(self.ssids) > 0:
